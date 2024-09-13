@@ -47,3 +47,12 @@ DieHandle >> printOn: aStream [
 	diceList do: [ :die | die printOn: aStream ].
 	aStream nextPutAll: ')'
 ]
+
+{ #category : 'initialization' }
+DieHandle >> roll [
+
+	| handleSum |
+	handleSum := 0.
+	diceList do: [ :die | handleSum := handleSum + (die roll) ].
+	^ handleSum
+]
