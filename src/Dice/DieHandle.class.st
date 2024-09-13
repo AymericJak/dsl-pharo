@@ -38,3 +38,12 @@ DieHandle >> initialize [
 	diceList := OrderedCollection new
 
 ]
+
+{ #category : 'initialization' }
+DieHandle >> printOn: aStream [
+
+	super printOn: aStream.
+	aStream nextPutAll: ' ('.
+	diceList do: [ :die | die printOn: aStream ].
+	aStream nextPutAll: ')'
+]
