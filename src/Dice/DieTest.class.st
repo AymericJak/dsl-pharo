@@ -1,8 +1,9 @@
 Class {
 	#name : 'DieTest',
 	#superclass : 'TestCase',
-	#category : 'Dice',
-	#package : 'Dice'
+	#category : 'Dice-Test',
+	#package : 'Dice',
+	#tag : 'Test'
 }
 
 { #category : 'tests' }

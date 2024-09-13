@@ -7,8 +7,9 @@ Class {
 	#instVars : [
 		'faces'
 	],
-	#category : 'Dice',
-	#package : 'Dice'
+	#category : 'Dice-Model',
+	#package : 'Dice',
+	#tag : 'Model'
 }
 
 { #category : 'as yet unclassified' }
