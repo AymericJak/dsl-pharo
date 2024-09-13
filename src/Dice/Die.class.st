@@ -11,6 +11,15 @@ Class {
 	#package : 'Dice'
 }
 
+{ #category : 'as yet unclassified' }
+Die class >> withFaces: anInteger [ 
+	"Create and initialize a new die with aNumber faces."
+	| instance |
+	instance := self new.
+	instance faces: anInteger.
+	^ instance
+]
+
 { #category : 'initialization' }
 Die >> faces [
 	^ faces
