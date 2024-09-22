@@ -12,6 +12,15 @@ Class {
 	#tag : 'Model'
 }
 
+{ #category : 'arithmetic' }
+DieHandle >> + aDieHandle [
+
+	| combinedDieHandle |
+	combinedDieHandle := DieHandle new.
+	combinedDieHandle diceList: (diceList copyWithAll: aDieHandle diceList).
+	^ combinedDieHandle
+]
+
 { #category : 'initialization' }
 DieHandle >> addDie: aDie [
 	diceList add: aDie 
