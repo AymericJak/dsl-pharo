@@ -16,7 +16,7 @@ Class {
 DieHandle >> + aDieHandle [
 
 	| combinedDieHandle |
-	combinedDieHandle := DieHandle new.
+	combinedDieHandle := self class new.
 	combinedDieHandle diceList: (diceList copyWithAll: aDieHandle diceList).
 	^ combinedDieHandle
 ]

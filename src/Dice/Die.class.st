@@ -28,11 +28,13 @@ Die >> faces [
 
 { #category : 'initialization' }
 Die >> faces: anInteger [
-	faces:= anInteger
+
+	faces := anInteger
 ]
 
 { #category : 'initialization' }
 Die >> initialize [
+
 	super initialize.
 	faces := 6
 ]
