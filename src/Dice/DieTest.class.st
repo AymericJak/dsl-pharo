@@ -19,6 +19,17 @@ DieTest >> testInitializeIsOk [
 ]
 
 { #category : 'tests' }
+DieTest >> testNumberOfFaces [
+
+	| hd |
+hd := (DieHandle new
+addDie: (Die withFaces: 10);
+addDie: (Die withFaces: 6);
+yourself).
+self assert: hd faces equals: 16
+]
+
+{ #category : 'tests' }
 DieTest >> testRolling [
 	| d |
 	d:= Die new.

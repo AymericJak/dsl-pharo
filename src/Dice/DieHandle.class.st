@@ -42,6 +42,14 @@ DieHandle >> diceNumber [
 ]
 
 { #category : 'initialization' }
+DieHandle >> faces [
+	| handleSum |
+	handleSum := 0.
+	diceList do: [ :die | handleSum := handleSum + die faces ].
+	^ handleSum
+]
+
+{ #category : 'initialization' }
 DieHandle >> initialize [
 	super initialize.
 	diceList := OrderedCollection new
