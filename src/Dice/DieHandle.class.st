@@ -13,12 +13,9 @@ Class {
 }
 
 { #category : 'arithmetic' }
-DieHandle >> + aDieHandle [
+DieHandle >> + aDicable [
 
-	| combinedDieHandle |
-	combinedDieHandle := self class new.
-	combinedDieHandle diceList: (diceList copyWithAll: aDieHandle diceList).
-	^ combinedDieHandle
+	^ aDicable sumWithHandle: self
 ]
 
 { #category : 'initialization' }
@@ -72,4 +69,25 @@ DieHandle >> roll [
 	handleSum := 0.
 	diceList do: [ :die | handleSum := handleSum + (die roll) ].
 	^ handleSum
+]
+
+{ #category : 'arithmetic' }
+DieHandle >> sumWithDie: aDie [
+	"On peut ajouter un dé à un set, donc on créé une copie de notre ancien set et on ajoute le dé en paramètre"
+
+	| handle |
+	handle := self class new.
+	self diceList do: [ :each | handle addDie: each ].
+	handle addDie: aDie.
+	^ handle
+]
+
+{ #category : 'arithmetic' }
+DieHandle >> sumWithHandle: aDieHandle [
+
+	| hd |
+	hd := self class new.
+	self diceList do: [ :each | hd addDie: each ].
+	aDieHandle diceList do: [ :each | hd addDie: each ].
+	^ hd
 ]

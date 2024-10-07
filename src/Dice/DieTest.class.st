@@ -7,6 +7,34 @@ Class {
 }
 
 { #category : 'tests' }
+DieTest >> testAddTwoDice [
+
+	| hd |
+	hd := (Die withFaces: 6) + (Die withFaces: 6).
+	self assert: hd diceNumber equals: 2.
+]
+
+{ #category : 'tests' }
+DieTest >> testAddingADieAndHandle [
+
+	| hd |
+	hd := (Die withFaces: 6) + (DieHandle new addDie: (Die withFaces: 10); yourself).
+	self assert: hd diceNumber equals: 2
+]
+
+{ #category : 'tests' }
+DieTest >> testAddingAnHandleWithADie [
+
+	| handle res |
+	handle := DieHandle new
+		          addDie: (Die withFaces: 6);
+		          addDie: (Die withFaces: 10);
+		          yourself.
+	res := handle + (Die withFaces: 20).
+	self assert: res diceNumber equals: 3
+]
+
+{ #category : 'tests' }
 DieTest >> testCreationIsOk [
 	self assert: (Die withFaces: 20) faces equals: 20
 
